@@ -2,224 +2,304 @@
 <html lang="en">
 
 <head>
-    <title>Calc</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
-    <script
-        src="https://cdn.jsdelivr.net/combine/npm/accounting-js@1.1.1,npm/vue@2.5.16,npm/vue-numeric@2.3.0"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vue-slider-component@latest/theme/default.css">
-    <script
-        src="https://cdn.jsdelivr.net/npm/vue-slider-component@latest/dist/vue-slider-component.umd.min.js"></script>
-        <style>
-            .col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
-    position: relative !important;
-    width: 100% !important;
-    min-height: 1px !important;
-    padding-right: 20px !important;
-    padding-left: 5px !important;
-}
-
-        </style>
+	<title>Calc</title>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/combine/npm/accounting-js@1.1.1,npm/vue@2.5.16,npm/vue-numeric@2.3.0"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vue-slider-component@latest/theme/default.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue-slider-component@latest/dist/vue-slider-component.umd.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+	<style>
+		.col,
+		.col-1,
+		.col-10,
+		.col-11,
+		.col-12,
+		.col-2,
+		.col-3,
+		.col-4,
+		.col-5,
+		.col-6,
+		.col-7,
+		.col-8,
+		.col-9,
+		.col-auto,
+		.col-lg,
+		.col-lg-1,
+		.col-lg-10,
+		.col-lg-11,
+		.col-lg-12,
+		.col-lg-2,
+		.col-lg-3,
+		.col-lg-4,
+		.col-lg-5,
+		.col-lg-6,
+		.col-lg-7,
+		.col-lg-8,
+		.col-lg-9,
+		.col-lg-auto,
+		.col-md,
+		.col-md-1,
+		.col-md-10,
+		.col-md-11,
+		.col-md-12,
+		.col-md-2,
+		.col-md-3,
+		.col-md-4,
+		.col-md-5,
+		.col-md-6,
+		.col-md-7,
+		.col-md-8,
+		.col-md-9,
+		.col-md-auto,
+		.col-sm,
+		.col-sm-1,
+		.col-sm-10,
+		.col-sm-11,
+		.col-sm-12,
+		.col-sm-2,
+		.col-sm-3,
+		.col-sm-4,
+		.col-sm-5,
+		.col-sm-6,
+		.col-sm-7,
+		.col-sm-8,
+		.col-sm-9,
+		.col-sm-auto,
+		.col-xl,
+		.col-xl-1,
+		.col-xl-10,
+		.col-xl-11,
+		.col-xl-12,
+		.col-xl-2,
+		.col-xl-3,
+		.col-xl-4,
+		.col-xl-5,
+		.col-xl-6,
+		.col-xl-7,
+		.col-xl-8,
+		.col-xl-9,
+		.col-xl-auto {
+			position: relative !important;
+			width: 100% !important;
+			min-height: 1px !important;
+			padding-right: 20px !important;
+			padding-left: 5px !important;
+		}
+	</style>
 </head>
 
 <body>
-    <div id="app" class="container-fluid mt-2">
-        <div class="card shadow-sm mb-5">
-            <div class="card-header">
-                <h5>
-                    Irrigation Calculator
-                </h5>
-            </div>
-            <div class="card-body p-5">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="form-group row">
-                            <label for="exampleInputEmail1" class="col-form-label col-md-6">Emitter Flow Rate (GPH)</label>
-                            <vue-numeric class="form-control form-control-sm col-md-6 mt-1" :precision="2" v-model="C4"></vue-numeric>
-                        </div>
-                        <div class="form-group row">
-                            <label for="exampleInputEmail1" class="col-form-label col-md-6">Emitters Per Plant</label>
-                            <vue-numeric class="form-control form-control-sm col-md-6 mt-1" v-model="C5"></vue-numeric>
-                        </div>
-                        <div class="form-group row">
-                            <label for="exampleInputEmail1" class="col-form-label col-md-6">Pot Volume (gal)</label>
-                            <vue-numeric class="form-control form-control-sm col-md-6 mt-1" v-model="C6"></vue-numeric>
-                        </div>
-                        <div class="form-group row">
-                            <label for="exampleInputEmail1" class="col-form-label col-md-6">P1 Shot Time (MM:SS)</label>
-                            <input type="text" class="form-control form-control-sm col-md-6 mt-1" v-model="C7" placeholder="00:00">
-                        </div>
-                        <div class="form-group row">
-                            <label for="exampleInputEmail1" class="col-form-label col-md-6">P1 Total Shots</label>
-                            <vue-numeric class="form-control form-control-sm col-md-6 mt-1" v-model="C8"></vue-numeric>
-                        </div>
-                        <div class="form-group row">
-                            <label for="exampleInputEmail1" class="col-form-label col-md-6">P2 Shot Time (MM:SS)</label>
-                            <input type="text" class="form-control form-control-sm col-md-6 mt-1" v-model="C9" placeholder="00:00">
-                        </div>
-                        <div class="form-group row">
-                            <label for="exampleInputEmail1" class="col-form-label col-md-6">P2 Total Shots</label>
-                            <vue-numeric class="form-control form-control-sm col-md-6 mt-1" v-model="C10"></vue-numeric>
-                        </div>
-                        <div class="form-group row">
-                            <label for="exampleInputEmail1" class="col-form-label col-md-6">P3 Shot Time (MM:SS)</label>
-                            <input type="text" class="form-control form-control-sm col-md-6 mt-1" v-model="C11" placeholder="00:00">
-                        </div>
-                        <div class="form-group row">
-                            <label for="exampleInputEmail1" class="col-form-label col-md-6">P3 Total Shots</label>
-                            <vue-numeric class="form-control form-control-sm col-md-6 mt-1" v-model="C12"></vue-numeric>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-8">
-                        <div class="table-responsive">
-                            <table class="table table-bordered table-striped">
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th>P1</th>
-                                        <th>P2</th>
-                                        <th>P3</th>
-                                        <th>Total</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Volume per Plant (mL)</td>
-                                        <td><vue-numeric class="form-control form-control-sm" v-model="C15" read-only :precision="0"></vue-numeric></td>
-                                        <td><vue-numeric class="form-control form-control-sm" v-model="D15" read-only :precision="0"></vue-numeric></td>
-                                        <td><vue-numeric class="form-control form-control-sm" v-model="E15" read-only :precision="0"></vue-numeric></td>
-                                        <td><vue-numeric class="form-control form-control-sm" v-model="F15" read-only :precision="0"></vue-numeric></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Volume per Plant % Media</td>
-                                        <td><vue-numeric class="form-control form-control-sm" v-model="C16" read-only :precision="2"></vue-numeric></td>
-                                        <td><vue-numeric class="form-control form-control-sm" v-model="D16" read-only :precision="2"></vue-numeric></td>
-                                        <td><vue-numeric class="form-control form-control-sm" v-model="E16" read-only :precision="2"></vue-numeric></td>
-                                        <td><vue-numeric class="form-control form-control-sm" v-model="F16" read-only :precision="2"></vue-numeric></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Time (s)</td>
-                                        <td><vue-numeric class="form-control form-control-sm" v-model="C17" read-only :precision="0"></vue-numeric></td>
-                                        <td><vue-numeric class="form-control form-control-sm" v-model="D17" read-only :precision="0"></vue-numeric></td>
-                                        <td><vue-numeric class="form-control form-control-sm" v-model="E17" read-only :precision="0"></vue-numeric></td>
-                                        <td><vue-numeric class="form-control form-control-sm" v-model="F17" read-only :precision="0"></vue-numeric></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+	<div id="app" class="container-fluid mt-2">
+		<div class="card shadow-sm mb-5">
+			<div class="card-header">
+				<h5>
+					Irrigation Calculator
+				</h5>
+			</div>
+			<div class="card-body p-5">
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group row">
+							<label for="exampleInputEmail1" class="col-form-label col-md-6">Emitter Flow Rate (GPH)</label>
+							<vue-numeric class="form-control form-control-sm col-md-6 mt-1" :precision="2" v-model="C4"></vue-numeric>
+						</div>
+						<div class="form-group row">
+							<label for="exampleInputEmail1" class="col-form-label col-md-6">Emitters Per Plant</label>
+							<vue-numeric class="form-control form-control-sm col-md-6 mt-1" v-model="C5"></vue-numeric>
+						</div>
+						<div class="form-group row">
+							<label for="exampleInputEmail1" class="col-form-label col-md-6">Pot Volume (gal)</label>
+							<vue-numeric class="form-control form-control-sm col-md-6 mt-1" v-model="C6"></vue-numeric>
+						</div>
+						<div class="form-group row">
+							<label for="exampleInputEmail1" class="col-form-label col-md-6">P1 Shot Time (MM:SS)</label>
+							<input type="text" class="form-control form-control-sm col-md-6 mt-1" v-model="C7" placeholder="00:00">
+						</div>
+						<div class="form-group row">
+							<label for="exampleInputEmail1" class="col-form-label col-md-6">P1 Total Shots</label>
+							<vue-numeric class="form-control form-control-sm col-md-6 mt-1" v-model="C8"></vue-numeric>
+						</div>
+						<div class="form-group row">
+							<label for="exampleInputEmail1" class="col-form-label col-md-6">P2 Shot Time (MM:SS)</label>
+							<input type="text" class="form-control form-control-sm col-md-6 mt-1" v-model="C9" placeholder="00:00">
+						</div>
+						<div class="form-group row">
+							<label for="exampleInputEmail1" class="col-form-label col-md-6">P2 Total Shots</label>
+							<vue-numeric class="form-control form-control-sm col-md-6 mt-1" v-model="C10"></vue-numeric>
+						</div>
+						<div class="form-group row">
+							<label for="exampleInputEmail1" class="col-form-label col-md-6">P3 Shot Time (MM:SS)</label>
+							<input type="text" class="form-control form-control-sm col-md-6 mt-1" v-model="C11" placeholder="00:00">
+						</div>
+						<div class="form-group row">
+							<label for="exampleInputEmail1" class="col-form-label col-md-6">P3 Total Shots</label>
+							<vue-numeric class="form-control form-control-sm col-md-6 mt-1" v-model="C12"></vue-numeric>
+						</div>
+					</div>
 
-                            <div class="text-center" style="align-items: center;">
-                                <button class="btn btn-sm btn-outline-primary" @click="calculate">Calculate</button>
-                                <button class="btn btn-sm btn-outline-success" @click="exportToExcel">Export to Excel</button>
-                                <button class="btn btn-sm btn-outline-primary" @click="exportToCSV">Export to CSV</button>
-                            </div>
+					<div class="col-md-8">
+						<div class="table-responsive">
+							<table class="table table-bordered table-striped">
+								<thead>
+									<tr>
+										<th></th>
+										<th>P1</th>
+										<th>P2</th>
+										<th>P3</th>
+										<th>Total</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Volume per Plant (mL)</td>
+										<td><vue-numeric class="form-control form-control-sm" v-model="C15" read-only
+												:precision="0"></vue-numeric></td>
+										<td><vue-numeric class="form-control form-control-sm" v-model="D15" read-only
+												:precision="0"></vue-numeric></td>
+										<td><vue-numeric class="form-control form-control-sm" v-model="E15" read-only
+												:precision="0"></vue-numeric></td>
+										<td><vue-numeric class="form-control form-control-sm" v-model="F15" read-only
+												:precision="0"></vue-numeric></td>
+									</tr>
+									<tr>
+										<td>Volume per Plant % Media</td>
+										<td><vue-numeric class="form-control form-control-sm" v-model="C16" read-only
+												:precision="2"></vue-numeric></td>
+										<td><vue-numeric class="form-control form-control-sm" v-model="D16" read-only
+												:precision="2"></vue-numeric></td>
+										<td><vue-numeric class="form-control form-control-sm" v-model="E16" read-only
+												:precision="2"></vue-numeric></td>
+										<td><vue-numeric class="form-control form-control-sm" v-model="F16" read-only
+												:precision="2"></vue-numeric></td>
+									</tr>
+									<tr>
+										<td>Time (s)</td>
+										<td><vue-numeric class="form-control form-control-sm" v-model="C17" read-only
+												:precision="0"></vue-numeric></td>
+										<td><vue-numeric class="form-control form-control-sm" v-model="D17" read-only
+												:precision="0"></vue-numeric></td>
+										<td><vue-numeric class="form-control form-control-sm" v-model="E17" read-only
+												:precision="0"></vue-numeric></td>
+										<td><vue-numeric class="form-control form-control-sm" v-model="F17" read-only
+												:precision="0"></vue-numeric></td>
+									</tr>
+								</tbody>
+							</table>
 
-                        </div>
-                    </div>
-                </div>
-            </div><!-- row -->
-        </div>
-    </div>
-    <script type="text/javascript">
-        function number(n) {
-            return (isNaN(parseFloat(n)) || !isFinite(n)) ? 0 : parseFloat(n);
-        }
-    
-        Vue.use(VueNumeric.default);
-    
-        var app = new Vue({
-            el: '#app',
-            data() {
-                return {
-                    C4: 0.33,
-                    C5: 4,
-                    C6: 2,
-                    C7: '01:00', // P1 Shot Time (MM:SS format)
-                    C8: 1,
-                    C9: '02:00', // P2 Shot Time (MM:SS format)
-                    C10: 1,
-                    C11: '01:00', // P3 Shot Time (MM:SS format)
-                    C12: 1,
-                    // Store calculated values for later use
-                    C15: 0,
-                    D15: 0,
-                    E15: 0,
-                    F15: 0,
-                    C16: 0,
-                    D16: 0,
-                    E16: 0,
-                    F16: 0,
-                    C17: 0,
-                    D17: 0,
-                    E17: 0,
-                    F17: 0
-                }
-            },
-            methods: {
-                timeToDecimal(time) {
-                    let timeParts = time.split(":");
-                    let minutes = parseInt(timeParts[0]);
-                    let seconds = parseInt(timeParts[1]);
-                    let totalSeconds = (minutes * 60) + seconds;
-                    return totalSeconds / 86400; // Convert seconds to fraction of a day
-                },
-                calculate() {
-                    this.C7Decimal = this.timeToDecimal(this.C7);
-                    this.C9Decimal = this.timeToDecimal(this.C9);
-                    this.C11Decimal = this.timeToDecimal(this.C11);
-    
-                    // Calculate values without decimals
-                    this.C15 = Math.round((this.C7Decimal * 86400 * this.C5 * (3785.4 * this.C4 / 3600)) * this.C8);
-                    this.D15 = Math.round((this.C9Decimal * 86400 * this.C5 * (3785.4 * this.C4 / 3600)) * this.C10);
-                    this.E15 = Math.round((this.C11Decimal * 86400 * this.C5 * (3785.4 * this.C4 / 3600)) * this.C12);
-                    this.F15 = this.C15 + this.D15 + this.E15;
-    
-                    // Fix the decimal places for Volume per Plant % Media
-                    this.C16 = parseFloat((100 * this.C15 / (this.C6 * 3785)).toFixed(2));
-                    this.D16 = parseFloat((100 * this.D15 / (this.C6 * 3785)).toFixed(2));
-                    this.E16 = parseFloat((100 * this.E15 / (this.C6 * 3785)).toFixed(2));
-                    this.F16 = parseFloat((this.C16 + this.D16 + this.E16).toFixed(2));
-    
-                    // Fix Time calculation to be Total Shots multiplied by Shot Time
-                    let p1Seconds = this.C7Decimal * 86400;
-                    let p2Seconds = this.C9Decimal * 86400;
-                    let p3Seconds = this.C11Decimal * 86400;
-                    
-                    this.C17 = Math.round(p1Seconds * this.C8);
-                    this.D17 = Math.round(p2Seconds * this.C10);
-                    this.E17 = Math.round(p3Seconds * this.C12);
-                    this.F17 = this.C17 + this.D17 + this.E17;
-                },
-                exportToExcel() {
-                    const worksheet = XLSX.utils.table_to_sheet(document.querySelector('table'));
-                    const workbook = XLSX.utils.book_new();
-                    XLSX.utils.book_append_sheet(workbook, worksheet, "Irrigation Data");
-                    XLSX.writeFile(workbook, "Irrigation_Calculator.xlsx");
-                },
-                exportToCSV() {
-                    const table = document.querySelector('table');
-                    const csvData = [];
-                    const rows = table.querySelectorAll('tr');
-                    rows.forEach(row => {
-                        const cells = row.querySelectorAll('td, th');
-                        const rowData = [];
-                        cells.forEach(cell => {
-                            rowData.push(cell.innerText);
-                        });
-                        csvData.push(rowData.join(','));
-                    });
-                    const csvString = csvData.join('\n');
-                    const blob = new Blob([csvString], { type: 'text/csv' });
-                    saveAs(blob, "Irrigation_Calculator.csv");
-                }
-            }
-        });
-    </script>
-        
+							<div class="text-center" style="align-items: center;">
+								<button class="btn btn-sm btn-outline-primary" @click="calculate">Calculate</button>
+								<button class="btn btn-sm btn-outline-success" @click="exportToExcel">Export to Excel</button>
+								<button class="btn btn-sm btn-outline-primary" @click="exportToCSV">Export to CSV</button>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div><!-- row -->
+		</div>
+	</div>
+	<script type="text/javascript">
+		function number(n) {
+			return (isNaN(parseFloat(n)) || !isFinite(n)) ? 0 : parseFloat(n);
+		}
+
+		Vue.use(VueNumeric.default);
+
+		var app = new Vue({
+			el: '#app',
+			data() {
+				return {
+					C4: 0.33,
+					C5: 4,
+					C6: 2,
+					C7: '01:00', // P1 Shot Time (MM:SS format)
+					C8: 1,
+					C9: '02:00', // P2 Shot Time (MM:SS format)
+					C10: 1,
+					C11: '01:00', // P3 Shot Time (MM:SS format)
+					C12: 1,
+					// Store calculated values for later use
+					C15: 0,
+					D15: 0,
+					E15: 0,
+					F15: 0,
+					C16: 0,
+					D16: 0,
+					E16: 0,
+					F16: 0,
+					C17: 0,
+					D17: 0,
+					E17: 0,
+					F17: 0
+				}
+			},
+			methods: {
+				timeToDecimal(time) {
+					let timeParts = time.split(":");
+					let minutes = parseInt(timeParts[0]);
+					let seconds = parseInt(timeParts[1]);
+					let totalSeconds = (minutes * 60) + seconds;
+					return totalSeconds / 86400; // Convert seconds to fraction of a day
+				},
+				calculate() {
+					this.C7Decimal = this.timeToDecimal(this.C7);
+					this.C9Decimal = this.timeToDecimal(this.C9);
+					this.C11Decimal = this.timeToDecimal(this.C11);
+
+					// Calculate values without decimals
+					this.C15 = Math.round((this.C7Decimal * 86400 * this.C5 * (3785.4 * this.C4 / 3600)) * this.C8);
+					this.D15 = Math.round((this.C9Decimal * 86400 * this.C5 * (3785.4 * this.C4 / 3600)) * this.C10);
+					this.E15 = Math.round((this.C11Decimal * 86400 * this.C5 * (3785.4 * this.C4 / 3600)) * this.C12);
+					this.F15 = this.C15 + this.D15 + this.E15;
+
+					// Fix the decimal places for Volume per Plant % Media
+					this.C16 = parseFloat((100 * this.C15 / (this.C6 * 3785)).toFixed(2));
+					this.D16 = parseFloat((100 * this.D15 / (this.C6 * 3785)).toFixed(2));
+					this.E16 = parseFloat((100 * this.E15 / (this.C6 * 3785)).toFixed(2));
+					this.F16 = parseFloat((this.C16 + this.D16 + this.E16).toFixed(2));
+
+					// Fix Time calculation to be Total Shots multiplied by Shot Time
+					let p1Seconds = this.C7Decimal * 86400;
+					let p2Seconds = this.C9Decimal * 86400;
+					let p3Seconds = this.C11Decimal * 86400;
+
+					this.C17 = Math.round(p1Seconds * this.C8);
+					this.D17 = Math.round(p2Seconds * this.C10);
+					this.E17 = Math.round(p3Seconds * this.C12);
+					this.F17 = this.C17 + this.D17 + this.E17;
+				},
+				exportToExcel() {
+					const worksheet = XLSX.utils.table_to_sheet(document.querySelector('table'));
+					const workbook = XLSX.utils.book_new();
+					XLSX.utils.book_append_sheet(workbook, worksheet, "Irrigation Data");
+					XLSX.writeFile(workbook, "Irrigation_Calculator.xlsx");
+				},
+				exportToCSV() {
+					const table = document.querySelector('table');
+					const csvData = [];
+					const rows = table.querySelectorAll('tr');
+					rows.forEach(row => {
+						const cells = row.querySelectorAll('td, th');
+						const rowData = [];
+						cells.forEach(cell => {
+							rowData.push(cell.innerText);
+						});
+						csvData.push(rowData.join(','));
+					});
+					const csvString = csvData.join('\n');
+					const blob = new Blob([csvString], { type: 'text/csv' });
+					saveAs(blob, "Irrigation_Calculator.csv");
+				}
+			}
+		});
+	</script>
+
 </body>
 
 </html>
